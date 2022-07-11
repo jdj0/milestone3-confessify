@@ -1,0 +1,33 @@
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+}
+a, navbar-brand {
+    margin-left: 8px;
+}
+
+p {
+    color: aquamarine;
+}
+
+#title-logo {
+    margin: 50px;
+}
+
+.navbar-toggler {
+    margin-right: 5px;
+}
+
+.navbar-brand {
+    position: absolute;
+    top: 0px;
+}
+
+.navbar-collapse {
+    margin-left: 110px;
+}
+
+#login {
+    padding: 10%;
+}
