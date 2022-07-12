@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="card-register" class="mx-auto" style="width: 50rem;">
+    <img src="static/images/title.png" class="card-img-top" alt="...">
+    <div class="card-body">
+        <form action="POST" action="{{ url_for('register') }}">
+            <!-- email -->
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-at"></i></span>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter email"
+                    aria-label="email" aria-describedby="basic-addon1">
+                <label for="email"></label>
+            </div>
+            <!-- password 1 -->
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                <input id="password1" type="password" name="password1" class="form-control" placeholder="Enter password"
+                    aria-label="password 1" aria-describedby="basic-addon1">
+                <label for="password1"></label>
+            </div>
+            <!-- password 2 -->
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                <input id="password2" type="password" name="password2" class="form-control"
+                    placeholder="Re-enter password" aria-label="password 2" aria-describedby="basic-addon1">
+                <label for="password2"></label>
+            </div>
+            <!-- username -->
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter username"
+                    aria-label="username" aria-describedby="basic-addon1">
+                <label for="username"></label>
+            </div>
+            <!-- register button -->
+            <button class="button-52" role="button">Sign Up</button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

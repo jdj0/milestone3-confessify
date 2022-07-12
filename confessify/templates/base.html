@@ -30,36 +30,30 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ url_for('home') }}"><i class="fa-solid fa-cross"></i> Home</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('confess') }}"><i class="fa-solid fa-person-booth"></i>
+                        Confess</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href=""><i class="fa-solid fa-hands-praying"></i> Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=""><i class="fa-solid fa-person-booth"></i> Register</a>
+                    <a class="nav-link" href="{{ url_for('register') }}"><i class="fa-solid fa-handshake-simple"></i></i> Register</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <section id="login">
-        <div class="container-fluid">
-            <div class="row justify-content-evenly">
-                <div class="col-12 col-md-6">
-                    <img src="../static/images/title.png" alt="" width="483" height="155">
-                    <h2>The confession of evil works is the beginning of good works</h2>
-                </div>
-                <div class="col-12 col-md-6">
-                    <h1>Good to see you again!</h1>
-                    <h2>New here? Register now</h2>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 
     <!-- Footer -->
     <footer>
-    <div id="footer" class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        © 2022 Confessify
-    </div>
+        <div id="footer" class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2022 Confessify
+        </div>
     </footer>
 
 
