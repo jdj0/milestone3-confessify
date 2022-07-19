@@ -38,11 +38,25 @@
                     <a class="nav-link" href=""><i class="fa-solid fa-hands-praying"></i> Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('register') }}"><i class="fa-solid fa-handshake-simple"></i></i> Register</a>
+                    <a class="nav-link" href="{{ url_for('register') }}"><i
+                            class="fa-solid fa-handshake-simple"></i></i> Register</a>
                 </li>
             </ul>
         </div>
     </nav>
+
+    <section>
+        <!-- flash message -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashed-message text-center">
+                        <h1>{{ message }}</h1>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
 
     <main class="container">
         {% block content %}

@@ -6,6 +6,11 @@ body {
     font-family: 'Sora', sans-serif;
 }
 
+.flashed-message{
+    line-height: 2.5;
+    padding: 1em;
+}
+
 #title-image{
     height: 155px;
     width: 483px;
@@ -56,7 +61,7 @@ p {
 
 
 
-
+/* Button styling */
 .button-52 {
     font-size: 16px;
     font-weight: 300;
