@@ -18,12 +18,11 @@ def register():
         if existing_user:
             flash("Username already taken")
             return redirect(url_for("register"))
-
+        # create new user entry for database
         new_user = User(
             username = request.form.get('username').lower(),
             password = generate_password_hash(request.form.get('password1'))
         )
-
         # enter new_user to the database
         db.session.add(new_user)
         db.session.commit()

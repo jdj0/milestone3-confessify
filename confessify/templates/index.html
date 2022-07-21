@@ -1,20 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <main class="container" id="login">
-        <div class="container-fluid">
-            <div class="row justify-content-evenly">
-                <div class="col-12 col-md-6 log-cols">
-                    <img id="title-image" src="../static/images/title.png" alt="">
-                    <h2>The confession of evil works is the beginning of good works</h2>
+<main class="container" id="login">
+    <div class="container-fluid">
+        <div class="row justify-content-evenly">
+            <div class="col-12 col-md-6 log-cols">
+                <img id="title-image" class="img-fluid" alt="Responsive image" src="../static/images/title.png">
+                <!-- <p id="tag-line" class="text-center">A place to leave it all behind...</p> -->
+            </div>
+            <div class="col-12 col-md-6 log-cols">
+                <div class="card bg-dark" id="login-card">
+                    <div class="card-body">
+                        <input type="text" id="username-login" name="username-login" class="form-control login-inputs"
+                            placeholder="Username" aria-label="username" required>
+                        <input type="text" id="password-login" name="password-login" class="form-control login-inputs"
+                            placeholder="Password" aria-label="password" required>
+                    </div>
+                    <button class="button-52-5" role="button">Login</button>
                 </div>
-                <div class="col-12 col-md-6 log-cols">
-                    <h1>Good to see you again!</h1>
-                    <h2>New here? Register now</h2>
-                    <button class="button-52" role="button">Login</button>
+                <div class="d-flex justify-content-center">
+                    <button class="button-52" role="button">Create New Account</button>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
 {% endblock %}
