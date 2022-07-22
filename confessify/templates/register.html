@@ -1,29 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div id="card-register" class="mx-auto" style="width: 50rem;">
+<div id="card-register" class="container mx-auto" style="width: 50rem;">
     <img src="static/images/title.png" class="card-img-top" alt="confessify logo">
+
     <div class="card-body">
         <form method="POST" action="{{ url_for('register') }}">
             <!-- username -->
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
-                <input type="text" id="username" name="username" class="form-control login-inputs" placeholder="Enter username"
-                    aria-label="username" required>
+                <input type="text" id="username" name="username" class="form-control register-inputs" placeholder="Enter username"
+                    aria-label="username" minlength="3" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 <label for="username"></label>
             </div>
             <!-- password 1 -->
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                <input id="password1" type="password" name="password1" class="form-control" placeholder="Enter password"
-                    aria-label="password 1" required>
+                <input id="password1" type="password" name="password1" class="form-control register-inputs" placeholder="Enter password"
+                    aria-label="password 1" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 <label for="password1"></label>
             </div>
             <!-- password 2 -->
             <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                <input id="password2" type="password" name="password2" class="form-control"
-                    placeholder="Re-enter password" aria-label="password 2" required>
+                <input id="password2" type="password" name="password2" class="form-control register-inputs"
+                    placeholder="Re-enter password" aria-label="password 2" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 <label for="password2"></label>
             </div>
             <!-- register button -->

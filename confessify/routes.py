@@ -18,6 +18,10 @@ def register():
         if existing_user:
             flash("Username already taken")
             return redirect(url_for("register"))
+        # check passwords match
+        if request.form.get('password1') != request.form.get('password2'):
+            flash("Passwords do not match")
+            return redirect(url_for("register"))
         # create new user entry for database
         new_user = User(
             username = request.form.get('username').lower(),

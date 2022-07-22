@@ -6,20 +6,22 @@
         <div class="row justify-content-evenly">
             <div class="col-12 col-md-6 log-cols">
                 <img id="title-image" class="img-fluid" alt="Responsive image" src="../static/images/title.png">
-                <!-- <p id="tag-line" class="text-center">A place to leave it all behind...</p> -->
             </div>
             <div class="col-12 col-md-6 log-cols">
-                <div class="card bg-dark" id="login-card">
-                    <div class="card-body">
-                        <input type="text" id="username-login" name="username-login" class="form-control login-inputs"
-                            placeholder="Username" aria-label="username" required>
-                        <input type="text" id="password-login" name="password-login" class="form-control login-inputs"
-                            placeholder="Password" aria-label="password" required>
+                <form method="POST" action="{{ url_for('register') }}">
+                    <div class="card bg-dark" id="login-card">
+                        <div class="card-body">
+                            <input type="text" id="username-login" name="username-login"
+                                class="form-control login-inputs" placeholder="Username" aria-label="username" required>
+                            <input type="text" id="password-login" name="password-login"
+                                class="form-control login-inputs" placeholder="Password" aria-label="password" required>
+                        </div>
+                        <button class="button-52-5" role="button">Login</button>
                     </div>
-                    <button class="button-52-5" role="button">Login</button>
-                </div>
+                </form>
                 <div class="d-flex justify-content-center">
-                    <button class="button-52" role="button">Create New Account</button>
+                    <a href="{{ url_for('register') }}"><button class="button-52" role="button">Create New
+                            Account</button></a>
                 </div>
             </div>
         </div>

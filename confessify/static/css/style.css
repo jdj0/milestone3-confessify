@@ -61,6 +61,31 @@ navbar-brand {
     margin: 50px;
 }
 
+/* register.html */
+.register-inputs {
+    background-color: #212529;
+    color: white;
+    line-height: 2;
+    border: none;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+#card-register {
+    padding: 2.5em;
+    margin: 2.5em;
+}
+
+
+
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
 .button-52-5 {
     font-size: 16px;
     font-weight: 300;
@@ -75,6 +100,7 @@ navbar-brand {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    text-decoration: none;
 }
 
 .button-52-5:hover {
@@ -88,12 +114,6 @@ navbar-brand {
     }
 }
 
-/* register.html */
-
-#card-register {
-    padding: 2.5em;
-    margin: 2.5em;
-}
 
 /* Button styling */
 .button-52 {
@@ -128,6 +148,7 @@ navbar-brand {
     top: 0px;
     left: 0px;
 }
+
 
 
 /* Media queries */
