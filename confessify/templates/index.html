@@ -8,15 +8,18 @@
                 <img id="title-image" class="img-fluid" alt="Responsive image" src="../static/images/title.png">
             </div>
             <div class="col-12 col-md-6 log-cols">
-                <form method="POST" action="{{ url_for('register') }}">
+                <!-- login form -->
+                <form method="POST" action="{{ url_for('home') }}">
                     <div class="card bg-dark" id="login-card">
                         <div class="card-body">
+                            <!-- username -->
                             <input type="text" id="username-login" name="username-login"
                                 class="form-control login-inputs" placeholder="Username" aria-label="username" required>
+                            <!-- password -->
                             <input type="text" id="password-login" name="password-login"
                                 class="form-control login-inputs" placeholder="Password" aria-label="password" required>
                         </div>
-                        <button class="button-52-5" role="button">Login</button>
+                        <button class="button-52-5" type="submit" role="button">Login</button>
                     </div>
                 </form>
                 <div class="d-flex justify-content-center">

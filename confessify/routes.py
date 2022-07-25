@@ -1,11 +1,26 @@
-from flask import Flask, flash, render_template, request, url_for, redirect
+from flask import Flask, flash, render_template, request, url_for, redirect, session
 from confessify import app, db
 from confessify.models import User, Post
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def home():
+    if request.method == "POST":
+        # Search database for username
+        existing_user = User.query.filter(User.username == request.form.get('username-login').lower()).all()
+
+        if existing_user:
+            if check_password_hash(existing_user[0].password, request.form.get('password-login')):
+                session["user"] = request.form.get("username-login").lower()
+                flash("Welcome")
+            else:
+                flash("Incorrect login details")
+                return redirect(url_for("home"))
+        else:
+            flash("Incorrect login details")
+            return redirect(url_for("home"))
+
     return render_template("index.html")
 
 
