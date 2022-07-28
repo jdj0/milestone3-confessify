@@ -31,8 +31,8 @@
                     <a class="nav-link" href="{{ url_for('home') }}"><i class="fa-solid fa-cross"></i> Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for('confess') }}"><i class="fa-solid fa-person-booth"></i>
-                        Confess</a>
+                    <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}"><i class="fa-solid fa-person-booth"></i>
+                        Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href=""><i class="fa-solid fa-hands-praying"></i> Login</a>

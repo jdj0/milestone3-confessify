@@ -7,13 +7,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == "POST":
-        # Search database for username
         existing_user = User.query.filter(User.username == request.form.get('username-login').lower()).all()
-
+        # Search database for username
         if existing_user:
             if check_password_hash(existing_user[0].password, request.form.get('password-login')):
                 session["user"] = request.form.get("username-login").lower()
                 flash("Welcome")
+                return render_template("profile.html")
             else:
                 flash("Incorrect login details")
                 return redirect(url_for("home"))
@@ -50,6 +50,25 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/confess")
-def confess():
-    return render_template("confess.html")
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    if request.method == "POST":
+        
+        user = User.query.filter(User.username == session["user"].lower()).first()
+
+        post = Post(
+            post_title = request.form.get('post_title'),
+            post_content = request.form.get('post_content'),
+            user_id = user.id
+        )
+        
+        db.session.add(post)
+        db.session.commit()
+        return redirect(url_for('home'))
+
+    return render_template("profile.html")
+
+# @app.route("/profile/<username>", methods=["GET", "POST"])
+# def profile(username):
+#     if "user" in session:
+#         username = session["user"]
