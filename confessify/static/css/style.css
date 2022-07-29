@@ -9,6 +9,7 @@ body {
 .flashed-message {
     line-height: 2.5;
     padding: 1em;
+    margin-top: 10px;
 }
 
 /* base.html */
@@ -77,7 +78,7 @@ navbar-brand {
 }
 
 
-#confess-content {
+#post_content {
     height: 200px;
     resize: none;
 }

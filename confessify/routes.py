@@ -68,6 +68,11 @@ def profile():
 
     return render_template("profile.html")
 
+@app.route("/logout")
+def logout():
+    session.pop("user", None)
+    return redirect(url_for("home"))
+
 # @app.route("/profile/<username>", methods=["GET", "POST"])
 # def profile(username):
 #     if "user" in session:
