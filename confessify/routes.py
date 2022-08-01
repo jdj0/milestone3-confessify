@@ -77,3 +77,8 @@ def logout():
 # def profile(username):
 #     if "user" in session:
 #         username = session["user"]
+
+@app.route("/posts")
+def posts():
+    posts = list(Post.query.order_by(Post.id).all())
+    return render_template("posts.html", posts=posts)

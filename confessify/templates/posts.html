@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for post in posts %}
+<div class="card bg-dark post-card">
+  <div class="card-header">
+    {{ post.post_title }}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{ post.post_content }}</p>
+      <footer class="blockquote-footer">{{ post.user_id }}</footer>
+    </blockquote>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

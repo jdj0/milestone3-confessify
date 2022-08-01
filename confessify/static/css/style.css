@@ -77,6 +77,11 @@ navbar-brand {
     margin: 2.5em;
 }
 
+/* post.html */
+
+.post-card {
+    margin-top: 5%;
+}
 
 #post_content {
     height: 200px;

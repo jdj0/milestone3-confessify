@@ -30,8 +30,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ url_for('home') }}"><i class="fa-solid fa-cross"></i> Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('posts') }}"><i class="fa-solid fa-church"></i> Posts</a>
+                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}"><i class="fa-solid fa-person-booth"></i>
+                    <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}"><i
+                            class="fa-solid fa-person-booth"></i>
                         Profile</a>
                 </li>
                 <li class="nav-item">
@@ -39,7 +43,8 @@
                             class="fa-solid fa-handshake-simple"></i></i> Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa-solid fa-hands-praying"></i> Log Out</a>
+                    <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa-solid fa-hands-praying"></i> Log
+                        Out</a>
                 </li>
             </ul>
         </div>
@@ -48,13 +53,13 @@
     <section>
         <!-- flash message -->
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashed-message text-center">
-                        <h1>{{ message }}</h1>
-                    </div>
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flashed-message text-center">
+            <h1>{{ message }}</h1>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
     </section>
 
