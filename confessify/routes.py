@@ -46,6 +46,7 @@ def register():
         db.session.add(new_user)
         db.session.commit()
         flash("Sign up Successful")
+        return render_template("index.html")
 
     return render_template("register.html")
 
@@ -64,9 +65,24 @@ def profile():
         
         db.session.add(post)
         db.session.commit()
-        return redirect(url_for('home'))
+        return redirect(url_for('posts'))
 
     return render_template("profile.html")
+
+
+@app.route("/edit_post/<int:post_id>", methods=["GET", "POST"])
+def edit_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if request.method == "POST":
+        user = User.query.filter(User.username == session["user"].lower()).first()
+        post.post_title = request.form.get('post_title')
+        post.post_content = request.form.get('post_content')
+        post.user_id = user.id
+        db.session.commit()
+        return redirect(url_for('posts'))
+
+    return render_template("edit_post.html", post=post)
+
 
 @app.route("/logout")
 def logout():
