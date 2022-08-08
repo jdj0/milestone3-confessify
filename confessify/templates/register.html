@@ -4,35 +4,38 @@
 <div class="row">
     <div id="card-register" class=" col-sm-6 mx-auto" style="width: 50rem;">
         <img src="static/images/title.png" class="card-img-top" alt="confessify logo">
-
-        <div class="card-body">
-            <form method="POST" action="{{ url_for('register') }}">
-                <!-- username -->
-                <div class="input-group mb-3">
-                    <input type="text" id="username" name="username" class="form-control register-inputs"
-                        placeholder="Enter username" aria-label="username" minlength="3" maxlength="15"
-                        pattern="^[a-zA-Z0-9]{5,15}$" required>
-                    <label for="username"></label>
-                </div>
-                <!-- password 1 -->
-                <div class="input-group mb-3">
-                    <input id="password1" type="password" name="password1" class="form-control register-inputs"
-                        placeholder="Enter password" aria-label="password 1" minlength="5" maxlength="15"
-                        pattern="^[a-zA-Z0-9]{5,15}$" required>
-                    <label for="password1"></label>
-                </div>
-                <!-- password 2 -->
-                <div class="input-group mb-3">
-                    <input id="password2" type="password" name="password2" class="form-control register-inputs"
-                        placeholder="Re-enter password" aria-label="password 2" pattern="^[a-zA-Z0-9]{5,15}$" required>
-                    <label for="password2"></label>
-                </div>
-                <!-- register button -->
-                <div class="d-flex justify-content-center">
-                    <button class="button-52" role="button" type="submit">Sign Up</button>
-                </div>
-            </form>
+        <div class="card bg-dark" id="login-card">
+            <div class="card-body reg-card-body">
+                <form method="POST" action="{{ url_for('register') }}">
+                    <!-- username -->
+                    <div class="input-group mb-3">
+                        <input type="text" id="username" name="username" class="form-control register-inputs"
+                            placeholder="Enter username" aria-label="username" minlength="3" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" required>
+                        <label for="username"></label>
+                    </div>
+                    <!-- password 1 -->
+                    <div class="input-group mb-3">
+                        <input id="password1" type="password" name="password1" class="form-control register-inputs"
+                            placeholder="Enter password" aria-label="password 1" minlength="5" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" required>
+                        <label for="password1"></label>
+                    </div>
+                    <!-- password 2 -->
+                    <div class="input-group mb-3">
+                        <input id="password2" type="password" name="password2" class="form-control register-inputs"
+                            placeholder="Re-enter password" aria-label="password 2" pattern="^[a-zA-Z0-9]{5,15}$"
+                            required>
+                        <label for="password2"></label>
+                    </div>
+            </div>
+            <!-- register button -->
         </div>
+        <div class="d-flex justify-content-center">
+            <button class="button-52" role="button" type="submit">Sign Up</button>
+        </div>
+        </form>
+
     </div>
 </div>
 
