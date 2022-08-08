@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
+<main class="container mx-auto" id="login">
 <h1>Welcome {{ session.user }}</h1>
 
-<div class="col-8 col-md-8 log-cols">
+<div class="col-12 col-md-8 log-cols">
     <div class="row">
         <!-- confession form -->
         <form method="POST" action="{{ url_for('profile') }}">
@@ -24,5 +25,6 @@
 
     </div>
 </div>
+</main>
 
 {% endblock %}

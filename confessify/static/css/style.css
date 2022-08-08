@@ -4,6 +4,7 @@ body {
     background-color: #3f474f;
     color: white;
     font-family: 'Sora', sans-serif;
+    padding-top: 65px;
 }
 
 .flashed-message {
