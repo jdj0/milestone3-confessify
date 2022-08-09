@@ -27,11 +27,8 @@
         </a>
         <div class="collapse navbar-collapse adjust-nav" id="navbarNav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a id="link-adjust" class="nav-link" href="{{ url_for('home') }}"><i class="fa-solid fa-cross"></i>
-                        Home</a>
-                </li>
-                <li class="nav-item">
+                {% if session.user %}
+                <li class="nav-item link-adjust">
                     <a class="nav-link" href="{{ url_for('posts') }}"><i class="fa-solid fa-church"></i> Posts</a>
                 </li>
                 <li class="nav-item active">
@@ -40,13 +37,19 @@
                         Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('register') }}"><i
-                            class="fa-solid fa-handshake-simple"></i></i> Register</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa-solid fa-hands-praying"></i> Log
                         Out</a>
                 </li>
+                {% else %}
+                <li class="nav-item active link-adjust">
+                    <a class="nav-link" href="{{ url_for('home') }}"><i class="fa-solid fa-cross"></i>
+                        Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('register') }}"><i
+                            class="fa-solid fa-handshake-simple"></i></i> Register</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
@@ -70,8 +73,8 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
+    <footer class="fixed-bottom">
+        <div class="container footer-container">
             <div id="footer" class="text-center p-4">
                 © 2022 Confessify | Joshua Jones
             </div>

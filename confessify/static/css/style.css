@@ -7,6 +7,11 @@ body {
     padding-top: 65px;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 /* base.html */
 
 .flashed-message {
@@ -23,7 +28,7 @@ body {
     margin-left: 10px !important;
 }
 
-#link-adjust {
+.link-adjust {
     padding-left: 100px;
 }
 
@@ -50,6 +55,13 @@ navbar-brand {
     bottom: 0;
     width: 100%;
     background-color: #212529;
+}
+
+div,
+.container,
+.footer-container {
+    margin: 0;
+    padding: 0;
 }
 
 /* index.html */
@@ -111,13 +123,7 @@ navbar-brand {
 }
 
 
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-
+/* Button styling */
 .button-52-5 {
     font-size: 16px;
     font-weight: 300;
@@ -146,8 +152,6 @@ a {
     }
 }
 
-
-/* Button styling */
 .button-52 {
     font-size: 16px;
     font-weight: 300;
@@ -182,7 +186,6 @@ a {
 }
 
 
-
 /* Media queries */
 
 @media (min-width: 768px) {
@@ -202,7 +205,7 @@ a {
         margin: auto;
     }
 
-    #link-adjust {
+    .link-adjust {
         padding-left: 0px;
     }
 }
