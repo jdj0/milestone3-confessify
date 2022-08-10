@@ -60,7 +60,7 @@ def profile():
         post = Post(
             post_title = request.form.get('post_title'),
             post_content = request.form.get('post_content'),
-            user_id = user.id
+            post_user = user.username
         )
         
         db.session.add(post)
@@ -77,7 +77,7 @@ def edit_post(post_id):
         user = User.query.filter(User.username == session["user"].lower()).first()
         post.post_title = request.form.get('post_title')
         post.post_content = request.form.get('post_content')
-        post.user_id = user.id
+        post.post_user = user.username
         db.session.commit()
         return redirect(url_for('posts'))
 

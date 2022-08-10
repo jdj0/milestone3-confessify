@@ -17,7 +17,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     post_title = db.Column(db.String(25), nullable=False)
     post_content = db.Column(db.String(250), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id", ondelete="CASCADE"), nullable=False)
+    post_user = db.Column(db.String, db.ForeignKey("user.username", ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
         return f"#{self.id} - Title: {self.post_title} | Confession: {self.post_content}"

@@ -9,7 +9,7 @@
   <div class="card-body">
     <blockquote class="blockquote mb-0">
       <p>{{ post.post_content }}</p>
-      <footer class="blockquote-footer">{{ post.user_id }}</footer>
+      <footer class="blockquote-footer">{{ post.post_user }}</footer>
     </blockquote>
   </div>
   <a href="{{ url_for('edit_post', post_id=post.id) }}" role="button" class="btn btn-success">Edit</a>
