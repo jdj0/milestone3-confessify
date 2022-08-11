@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<main class="container mx-auto" id="login">
-<h1>Welcome {{ session.user }}</h1>
+<main class="container" id="login">
+<h1 class="text-center welcome-txt">Welcome, {{ session.user }}</h1>
 
-<div class="col-12 col-md-8 log-cols">
+<div class="col-12 col-md-8 log-cols mx-auto">
     <div class="row">
         <!-- confession form -->
         <form method="POST" action="{{ url_for('profile') }}">

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="col-12 col-md-8 log-cols">
+<h1 class="welcome-txt text-center">Edit or Delete</h1>
+
+<div class="col-12 col-md-8 log-cols mx-auto">
     <div class="row">
         <!-- confession form -->
         <form method="POST" action="{{ url_for('edit_post', post_id=post.id) }}">

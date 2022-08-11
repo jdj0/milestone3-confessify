@@ -12,7 +12,6 @@ def home():
         if existing_user:
             if check_password_hash(existing_user[0].password, request.form.get('password-login')):
                 session["user"] = request.form.get("username-login").lower()
-                flash("Welcome")
                 return render_template("profile.html")
             else:
                 flash("Incorrect login details")
@@ -97,10 +96,6 @@ def logout():
     session.pop("user", None)
     return redirect(url_for("home"))
 
-# @app.route("/profile/<username>", methods=["GET", "POST"])
-# def profile(username):
-#     if "user" in session:
-#         username = session["user"]
 
 @app.route("/posts")
 def posts():
