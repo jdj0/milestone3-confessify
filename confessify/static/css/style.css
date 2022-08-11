@@ -50,19 +50,8 @@ navbar-brand {
     margin-left: 110px;
 }
 
-#footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #212529;
-    padding-top: 25px;
-}
-
-div,
-.container,
-.footer-container {
-    margin: 0;
-    padding: 0;
+footer {
+    padding-top: 7.5%;
 }
 
 /* index.html */
