@@ -11,10 +11,10 @@
                 <div class="card-body">
                     <!-- title -->
                     <input type="text" id="post_title" name="post_title" class="form-control login-inputs"
-                        value="{{ post.post_title }}" aria-label="title" required>
+                        value="{{ post.post_title }}" aria-label="title" minlength="3" maxlength="25" required>
                     <!-- content -->
                     <textarea type="text" id="post_content" name="post_content" class="form-control login-inputs"
-                        aria-label="content" required>{{ post.post_content }}</textarea>
+                        aria-label="content" minlength="5" maxlength="250" required>{{ post.post_content }}</textarea>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
@@ -26,4 +26,4 @@
     </div>
 </div>
 
-{% endblock %} 
+{% endblock %}
