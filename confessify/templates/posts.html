@@ -2,7 +2,7 @@
 {% block content %}
 
 {% for post in posts %}
-<div class="card bg-dark post-card">
+<div class="card bg-dark post-card mx-auto">
   <div class="card-header">
     {{ post.post_title }}
   </div>
@@ -13,7 +13,7 @@
     </blockquote>
   </div>
   {% if session.user == post.post_user %}
-  <a href="{{ url_for('edit_post', post_id=post.id) }}" role="button" class="btn btn-success">Edit</a>
+  <a href="{{ url_for('edit_post', post_id=post.id) }}" role="button" class="btn btn-success btn-edit">Edit</a>
   {% endif %}
 </div>
 {% endfor %}
