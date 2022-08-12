@@ -1,4 +1,5 @@
-from flask import Flask, flash, render_template, request, url_for, redirect, session
+from flask import (
+    Flask, flash, render_template, request, url_for, redirect, session)
 from confessify import app, db
 from confessify.models import User, Post
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -7,10 +8,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == "POST":
-        existing_user = User.query.filter(User.username == request.form.get('username-login').lower()).all()
+        existing_user = User.query.filter(
+            User.username == request.form.get('username-login').lower()).all()
         # Search database for username
         if existing_user:
-            if check_password_hash(existing_user[0].password, request.form.get('password-login')):
+            if check_password_hash(
+                existing_user[0].password, request.form.get('password-login')):
                 session["user"] = request.form.get("username-login").lower()
                 return render_template("profile.html")
             else:
@@ -27,7 +30,8 @@ def home():
 def register():
     if request.method == "POST":
         # Create exisiting username variable
-        existing_user = User.query.filter(User.username == request.form.get("username").lower()).all()
+        existing_user = User.query.filter(
+            User.username == request.form.get("username").lower()).all()
         # Check availability of username
         if existing_user:
             flash("Username already taken")
@@ -38,8 +42,8 @@ def register():
             return redirect(url_for("register"))
         # create new user entry for database
         new_user = User(
-            username = request.form.get('username').lower(),
-            password = generate_password_hash(request.form.get('password1'))
+            username=request.form.get('username').lower(),
+            password=generate_password_hash(request.form.get('password1'))
         )
         # enter new_user to the database
         db.session.add(new_user)
@@ -53,15 +57,14 @@ def register():
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
     if request.method == "POST":
-        
-        user = User.query.filter(User.username == session["user"].lower()).first()
-
+        user = User.query.filter(
+            User.username == session["user"].lower()).first()
         post = Post(
-            post_title = request.form.get('post_title'),
-            post_content = request.form.get('post_content'),
-            post_user = user.username
+            post_title=request.form.get('post_title'),
+            post_content=request.form.get('post_content'),
+            post_user=user.username
         )
-        
+        # insert new post to the database
         db.session.add(post)
         db.session.commit()
         return redirect(url_for('posts'))
@@ -73,7 +76,8 @@ def profile():
 def edit_post(post_id):
     post = Post.query.get_or_404(post_id)
     if request.method == "POST":
-        user = User.query.filter(User.username == session["user"].lower()).first()
+        user = User.query.filter(
+            User.username == session["user"].lower()).first()
         post.post_title = request.form.get('post_title')
         post.post_content = request.form.get('post_content')
         post.post_user = user.username

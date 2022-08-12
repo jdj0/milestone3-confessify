@@ -97,6 +97,15 @@ footer {
     margin: 2.5em;
 }
 
+.page-header{
+    padding-top: 50px;
+}
+
+.smile {
+    width: 200px;
+    padding-bottom: 10px;
+}
+
 .card-img-top {
     margin-bottom: 1.5rem;
 }
@@ -242,4 +251,8 @@ footer {
     .link-adjust {
         padding-left: 0px;
     }
+}
+
+.s-img {
+    display: block;
 }
