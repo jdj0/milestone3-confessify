@@ -17,7 +17,6 @@ View live site [here](https://jdj0.github.io/milestone2-todo/) XX.
     - As a frequent user, I want to be able to create confessions and view other people’s confessions.
     - As a frequent user, I want to be able to edit and/or delete confessions when necessary.   
 
-
 ## Design
 - Design Choices
     - The web app follows the principles of minimalist design. Each element of the app serves a purpose and serves the user in the most uncluttered way possible. This design choice aids the user by keeping features simple, obvious and effective. 
@@ -92,54 +91,54 @@ View live site [here](https://jdj0.github.io/milestone2-todo/) XX.
 - Python code is PEP8 compliant and free from error (checked at [pep8online](http://pep8online.com))
 
 ## Testing User Stories
-- "As a user of the application, I want to be able to input tasks that I want to get done that day. I want to be able to check off each task as I accomplish them. I want the option of deleting tasks that are no longer relevant."
-    -  A user of the application is greeted with a clear, clutter free interface that is clearly titled as a to-do list. The input at the bottom of the application is auto-focussed and has placeholder text that asks the user to “Add tasks here”. The add icon next to the input changes colour when hovered over to let the user know it is a button to be clicked:\
-    ![task-input](assets/images/task-input.png)\
-    Once the task is added to the list, the user is presented with intuitive icons that provide the functionality of completing or deleting the task:\
-    ![task](assets/images/task.png)\
-     The application will alert the user if they try and add a task without adding text to the input:\
-    ![empty input](assets/images/input-empty.png)\
-     The user will see a confirmation message pop up when they try to delete a task:\
-    ![delete pop up](assets/images/delete-pop-up.png)\
-    The input is limited to a max of 30 characters in order to preserve the formatting of the application. 
+- First Time Visistor
+    - "As a First Time Visitor, I want to be able to understand what can be done on this web app."
+        - Upon arrival to the site, the visitor is greeted with a hero image and a login screen. A first time visitor is prompted by a bright and colourful button that displays “Need to know more?”. The user is then taken to the register page, where they are first greeted by a brief and deliberately cryptic ‘about us’ message that follows on to the register page.
+    - "As a First Time Visitor, I want to be able to easily register so I can gain access to the app and it’s features."
+        - After registration, the navigation bar gives access to all the features of the site, including access to the confessions feed and confession form, where users are able to create a confession.
+
+- Frequent User
+    - "As a frequent user, I want to be able to login quickly and without hassle."
+        -  There is a clear login screen on the landing page of the site that gives quick access to frequent users who know the web app and what they wish to accomplish with it.
+    - "As a frequent user, I want to be able to create confessions and view other people’s confessions."
+        - After logging in, the user is given access to both the confession form, to make confessions, and the posts feed, where other’s confessions can be viewed. 
+    - "As a frequent user, I want to be able to edit and/or delete confessions when necessary."
+        - Once on the confessions feed, full CRUD functionality is given if the logged in user is the author of the post. The edit page allows the user ti update or delete their confessions.  
+
 
 ## Further Testing
+The following browsers and devices were given a pass if all elements of the site perfromed and diplayed as inteended.
 - Browsers
-    - Chrome: Displays and acts as intended. 
-    - Safari: Displays and acts as intended.
-    - Mozilla: Displays and acts as intended.
-    - Opera: Displays and acts as intended.
+    - Chrome: Pass
+    - Safari: Pass
+    - Mozilla: Pass
+    - Opera: Pass
 - Devices
-     - MacBook Pro 13inch: Displays and acts as intended.
-     - iPhone 13 Pro: Displays and acts as intended.
-     - iPad Pro: Displays and acts as intended.
-    - OnePlus Nord: Displays and acts as intended.
-     - Huawei Mateview display: Displays and acts as intended. 
+    - MacBook Air 13inch: Pass
+    - iPhone 13 Pro: Pass
+    - iPhone XS: Pass
+    - iPhone 7 Plus: Pass
+    - iPad Pro: Pass
+    - OnePlus Nord: Pass
+    - Huawei Mateview display: Pass
  - Real World Testing
-     - Friends and family members used the application to mentally 'offload' tasks that they wished to get done. This preliminery testing was successful, but did highlight an issue on mobile devices that used safari as a browser, where the search bar being at the bottom of the page covered part of the input. This bug has since been fixed and is documented below.
+     - Friends and family members were given access to the site to play with, and to see if they could 'break it'. The project also passsed this test. Feedback was positive, especially on the design of the site.
 
 ## Bug and Fixes
-- Mobile safari browsers have the search bar at the bottom of the window. This caused part of the input to be covered.
-    - Fix: changing the height of the application on mobile devices to "90vh".
-- It was possible to input empty tasks to the task list.
-    - Fix: Adding an “if” statement that alerts the user if they have tried adding an empty task to the task list.
-- It was possible to type in a task so long that it would run off the task list div.
-    - Fix: Added a limit of 30 characters to the task input.
+- Overhanging logo on mobile
+    - There was an issue where the design choice to have the brand image overhanging the navbar, interfered with the visibility of the nav links when the nav toggler displayed on mobile devices. This was fixed by centering the navbar brand when on smaller devices and left aligning the nav links, to make them visible.
+- Navbar brand image
+    - There was another issue where the brand image would randomly not display on just the edit page. This was especially strange as it was extending from base.html and was displaying perfectly on all other pages. The issue seemed to be because the image was accidentally placed with src instead of url_for. Once the image was displaying with url_for it displayed as expected.
 
 # Next Steps
-- Add a local storage feature so that the user can leave the webpage and return later to find the same tasks.
-- Add features that enhance and even reward productivity.
+- The next steps would be to add significant interactivity to th app, such as like buttons, reacting to confessions.
+- A way of organising the confession feed is needed. This could be through newest to oldest, or most up-voted, for example.
 
 # Deployment
 
-## GitHub Pages
+## Deploying to Heroku
 To deploy the site through GitHub pages:
-1.	Log in to GitHub and go to the GitHub Repository.
-2.	Click on settings (the gear icon).
-3.	Scroll down to the GitHub Pages header and click on the ‘Check it out here!’ link.
-4.	Under the Source header, from the dropdown menu choose ‘main’ then select folder '/ (root)'.
-5.  Click Save.
-6.	After the page refreshes, scroll down to the published website link found under the GitHub pages header.
+1.	XX
 
 ## Forking the GitHub Repository
 To create a copy of the project to experiment with changes in a safe way that will not affect the original site:
@@ -157,14 +156,13 @@ To create a copy of the project to experiment with changes in a safe way that wi
 For a detailed step-by-step guide with screenshots, click [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop).
 
 # Credits
-## Code
-- StackOverflow:
-The code for the date was taken from a post on stack overflow but was modified to a UK format. The source can be found [here](https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript).
 ## Content
 - All content written by Joshua Jones (Developer).
+- All images created by Joshua jones (Developer), unless stated otherwise.
+- The main button's original code  was by Joe Bocock, sourced from CSS Scan.
 - The  example Code Institute Read Me file, on which this Read Me file is based on.
 ## Media
-- All images and wireframes in this read me were created by the developer. 
+- All images and wireframes in this read me were created by the developer, Joshua Jones. 
 ## Acknowledgments
-- My Mentor, Precious Ijege, for his thoughtful and helpful feedback. 
-- Tutor Support, for their invaluable support throughout the entire project, with a special shoutout to Alex!  
+- My Mentor, Spencer Barriball, for his guidance and thoughtful feedback on the project.
+- Tutor Support, for their invaluable support throughout the entire project.
