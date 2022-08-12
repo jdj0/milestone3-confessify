@@ -131,6 +131,10 @@ footer {
     resize: none;
 }
 
+.modal {
+    color: black;
+}
+
 .delete-btn {
     margin-left: 15px;
 }
